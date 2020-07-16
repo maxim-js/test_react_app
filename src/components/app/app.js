@@ -7,7 +7,6 @@ const App = () => {
     return (<div>
         <Header />
         <PhotoList />
-        <div><p>Тут будут фотки</p></div>
     </div>)
 }
 

@@ -1,0 +1,8 @@
+.photo-list-group {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    grid-auto-rows: initial;
+    align-items: stretch;
+}

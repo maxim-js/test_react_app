@@ -1,0 +1,18 @@
+.card {
+    display: flex;
+}
+.card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    padding: 2% 5%;
+}
+.card-title {
+    justify-content: flex-start;
+}
+.icon-star {
+    margin: 0 0 0 auto;
+}
+.icon-star {
+    justify-content: flex-end;
+}
