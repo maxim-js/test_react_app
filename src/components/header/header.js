@@ -1,20 +1,32 @@
-import React from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import React, { Component } from 'react';
 import './header.css';
 
-const Header = () => {
-    return (
-        <div className="navbar">
-            <Nav>
-                <NavItem>
-                    <NavLink href="#">All picture</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#">Favorite</NavLink>
-                </NavItem>
-            </Nav>
-        </div>
-    );
-}
+export default class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.buttons = [
+            { name: 'all', label: 'Все' },
+            { name: 'favorite', label: 'Понравилось' }
+        ]
+    }
+    render() {
+        const buttons = this.buttons.map(({ name, label }) => {
+            const active = this.props.filter === name;
+            const classButton = active ? 'btn-info' : 'btn-outline-secondary'
 
-export default Header;
+            return (
+                <button
+                    key={name}
+                    type='button'
+                    className={`btn ${classButton}`}
+                    onClick={() => this.props.onFilterSelect(name)}>{label}</button>
+            )
+        });
+
+        return (
+            <div className="navbar" >
+                {buttons}
+            </div>
+        )
+    }
+}

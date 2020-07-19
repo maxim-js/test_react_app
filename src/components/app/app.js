@@ -1,13 +1,78 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../header';
 import PhotoList from '../photo-list'
 import './app.css';
+import PictureService from '../../service/service';
 
-const App = () => {
-    return (<div>
-        <Header />
-        <PhotoList />
-    </div>)
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 1 },
+                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 2 },
+                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: true, id: 3 },
+                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 4 },
+                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 5 },
+                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 6 }
+            ],
+            filter: 'all'
+        };
+        this.onToggleFavorite = this.onToggleFavorite.bind(this);
+        this.onFilterSelect = this.onFilterSelect.bind(this);
+    }
+
+    onToggleFavorite(id) {
+        this.setState(({ data }) => {
+            const index = data.findIndex(elem => elem.id === id);
+
+            const old = data[index];
+            const newItem = { ...old, favorite: !old.favorite };
+
+            const newArr = [...data.slice(0, index), newItem, ...data.slice(index + 1)]
+
+            return {
+                data: newArr
+            }
+        })
+    }
+
+    filterCard(items, filter) {
+        if (filter === 'favorite') {
+            return items.filter(item => item.favorite)
+        } else {
+            return items
+        }
+    }
+
+    onFilterSelect(filter) {
+        this.setState({ filter })
+    }
+
+    getPicture = async () => {
+        const api_url = await fetch('https://picsum.photos/v2/list?page=1');
+        const getdata = await api_url.json();
+        console.log(getdata);
+    }
+
+
+    render() {
+
+        const { filter, data } = this.state;
+
+        const visibleCard = this.filterCard(data, filter);
+
+        return (
+            <div>
+                <Header
+                    filter={filter}
+                    onFilterSelect={this.onFilterSelect}
+                    onToggleFavorite={this.onToggleFavorite} />
+                <PhotoList
+                    cards={visibleCard}
+                    onToggleFavorite={this.onToggleFavorite} />
+            </div >
+        )
+    }
+
 }
-
-export default App;
