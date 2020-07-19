@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import './header.css';
 
 export default class Header extends Component {
@@ -25,7 +26,12 @@ export default class Header extends Component {
 
         return (
             <div className="navbar" >
-                {buttons}
+                <Navbar light expand="md">
+                    <NavbarBrand href="/">App for Newton</NavbarBrand>
+                    {buttons}
+
+                </Navbar>
+
             </div>
         )
     }

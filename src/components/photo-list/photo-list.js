@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoListItem from '../photo-list-item';
+
 import './photo-list.css';
 
 const PhotoList = ({ cards, onToggleFavorite }) => {

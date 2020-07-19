@@ -9,12 +9,12 @@ export default class App extends Component {
         super(props);
         this.state = {
             data: [
-                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 1 },
-                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 2 },
-                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: true, id: 3 },
-                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 4 },
-                { url: 'https://i.picsum.photos/id/152/200/300.jpg?hmac=eCdUqkEQWPiigXtrPPzcwO9QeKYgOrV_YWW0LoFkuyk', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 5 },
-                { url: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U', author: 'aasd dfsfasdf', alt: 'picture from site', favorite: false, id: 6 }
+                { url: 'https://picsum.photos/id/0/5616/3744', author: 'Alejandro Escamilla', alt: 'picture from site', favorite: false, id: 1 },
+                { url: 'https://picsum.photos/id/1/5616/3744', author: 'Alejandro Escamilla', alt: 'picture from site', favorite: false, id: 2 },
+                { url: 'https://picsum.photos/id/10/2500/1667', author: 'Paul Jarvis', alt: 'picture from site', favorite: true, id: 3 },
+                { url: 'https://picsum.photos/id/100/2500/1656', author: 'Tina Rataj', alt: 'picture from site', favorite: false, id: 4 },
+                { url: 'https://picsum.photos/id/1000/5626/3635', author: 'Lukas Budimaier', alt: 'picture from site', favorite: false, id: 5 },
+                { url: 'https://picsum.photos/id/1001/5616/3744', author: 'Danielle MacInnes', alt: 'picture from site', favorite: false, id: 6 }
             ],
             filter: 'all'
         };

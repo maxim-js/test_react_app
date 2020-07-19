@@ -1,22 +1,18 @@
-export default class PictureService {
+class PictureService {
 
     constructor() {
-        this._apiBase = 'https://picsum.photos';
+        this._apiBase = '';
     }
     async getResourse(url) {
-        const res = await fetch(`${this._apiBase}${url}`);
-
-        if (!res.ok) {
-            throw new Error(`Could not fetch ${url}, status: ${res.status}`);
-        }
-
+        const res = await fetch('https://picsum.photos/v2/list');
         return await res.json();
     };
     getPictures() {
-        return this.getResourse('/v2/list')
+        return this.getResourse('ttps://picsum.photos/v2/list')
     }
 }
 
-// const pic = new PictureService();
-// pic.getPictures()
-//     .then(res => console.log(res));
+const pic = new PictureService();
+pic.getPictures()
+    .then(res => console.log(res)
+    );
