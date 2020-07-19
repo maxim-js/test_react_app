@@ -10,7 +10,7 @@ export default class App extends Component {
         this.state = {
             data: [
                 { url: 'https://picsum.photos/id/0/5616/3744', author: 'Alejandro Escamilla', alt: 'picture from site', favorite: false, id: 1 },
-                { url: 'https://picsum.photos/id/1/5616/3744', author: 'Alejandro Escamilla', alt: 'picture from site', favorite: false, id: 2 },
+                { url: 'https://picsum.photos/id/1002/4312/2868', author: 'NASA', alt: 'picture from site', favorite: false, id: 2 },
                 { url: 'https://picsum.photos/id/10/2500/1667', author: 'Paul Jarvis', alt: 'picture from site', favorite: true, id: 3 },
                 { url: 'https://picsum.photos/id/100/2500/1656', author: 'Tina Rataj', alt: 'picture from site', favorite: false, id: 4 },
                 { url: 'https://picsum.photos/id/1000/5626/3635', author: 'Lukas Budimaier', alt: 'picture from site', favorite: false, id: 5 },
